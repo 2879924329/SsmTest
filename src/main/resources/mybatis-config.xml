@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--1.配置数据库的环境-->
+    <settings>
+        <!--开启延迟加载开关-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!--开启属性按需加载-->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!--开启全局缓存开关-->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--调整分页合理化，即不会出现0页-1页或大于最大页数-->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+</configuration>
